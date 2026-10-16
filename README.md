@@ -19,6 +19,8 @@ Funciona **sin necesidad de Home Assistant**: todo se maneja desde la pantalla. 
 - Brillo y tiempo de iluminación de la pantalla ajustables.
 - Hotspot WiFi de emergencia con código QR en pantalla.
 
+
+
 ## Capturas
 
 Fotos reales de la pantalla del controlador.
