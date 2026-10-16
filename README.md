@@ -34,8 +34,7 @@ Fotos reales de la pantalla del controlador.
 | ![Página Lluvia](docs/img/pagina-lluvia.jpg) | ![Nombre de una zona](docs/img/teclado-nombre-zona.jpg) |
 | **Lluvia**: activar o desactivar el sensor, umbrales y borrado del histórico | Editar el **nombre de una zona** (pulsación larga sobre su duración) |
 | ![Código QR del hotspot](docs/img/qr-hotspot.jpg) | |
-| **Código QR** del hotspot WiFi de emergencia. La clave de la captura (`88888888`) es de ejemplo, ESPHome exige al menos 8 caracteres. Usa la tuya | 
-| ![Demo](docs/img/demo.mp4) | |
+| **Código QR** del hotspot WiFi de emergencia. La clave de la captura (`88888888`) es de ejemplo, ESPHome exige al menos 8 caracteres. Usa la tuya | |
 
 ## Hardware
 
