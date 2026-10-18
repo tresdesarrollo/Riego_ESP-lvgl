@@ -1337,7 +1337,9 @@ number:
     on_value:
       then:
         - lambda: |-
-            id(var_dias_saltar_inicio) = id(rtc_time).now().timestamp / 86400;
+            // Número de día LOCAL (no UTC): medianoche local + 12 h, para que el día cambie a las 00:00
+            auto ahora = id(rtc_time).now();
+            id(var_dias_saltar_inicio) = (ahora.timestamp - (ahora.hour * 3600 + ahora.minute * 60 + ahora.second) + 43200) / 86400;
   
   # Luz de pantalla.
   - platform: lvgl
@@ -4230,7 +4232,8 @@ interval:
           // Si está lloviendo justo ahora, no se arranca ningún programa (solo con el sensor activado)
           if (id(lluvia_activa).state && id(sensor_lluvia).state) return;
 
-          int current_day = ahora.timestamp / 86400;
+          // Día LOCAL (mismo cálculo que en "Saltar días"): el día UTC cambia a las 01:00/02:00 locales
+          int current_day = (ahora.timestamp - (ahora.hour * 3600 + ahora.minute * 60 + ahora.second) + 43200) / 86400;
           if ((current_day - id(var_dias_saltar_inicio)) % ((int)id(saltar_dias).state + 1) != 0) return;
 
           if (id(ejecutar_programa).is_running() || id(decidir_riego).is_running()) return;
